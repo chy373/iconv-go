@@ -98,3 +98,8 @@ func (this *Reader) Read(p []byte) (n int, err error) {
 	// return our results
 	return n, this.err
 }
+
+// Close close this reader, solve memory leak
+ func (this *Reader) Close(){
+      this.converter.Close()
+ }
